@@ -1,0 +1,135 @@
+/* Remove padding and margin */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+body{
+    font-family: sans-serif;
+    color:gray;
+}
+/* Navbar and Header */ 
+header {
+    display: flex;
+    background-color: #46ACC2;
+    padding: 16px;
+    color: white;
+}
+nav {   
+    display: flex;
+}
+nav div {
+    padding-right: 8px;
+}
+.search {
+    height: 18px;
+    color: white;
+    position: relative;
+    top: -2px;
+    border-radius: 3px;
+}
+header div {
+    padding: 8px;
+}
+.nav-right {
+    margin-left: auto;
+}
+.navbar-toggle {
+    display: none;
+}
+/* Navbar mobile and tablet view */
+@media only screen and (max-width:768px) {
+    header , nav {
+        flex-direction: column;
+    }
+    .nav-right {
+        margin-left: 0;
+    }
+    nav {
+        display: none;
+    }
+    .navbar-brand {
+        display: initial;
+    }
+    .navbar-toggle {
+        display: initial;
+        align-self: flex-end;
+        position: absolute;
+        cursor: pointer;
+    }
+    .navbar-toggleShow {
+        display: flex;
+    }
+    section {
+        flex-direction: column;
+       
+    }
+}
+/* Cards Section */
+section {
+    display: flex;
+}
+.card {
+    border: 2px solid rgb(216, 212, 212);
+    border-radius: 6px;
+    margin: 50px 15px;
+    padding: 10px 10px;
+    padding-bottom: 30px;
+    height: 250px;
+    min-width: 320px;
+    position: relative;
+    box-shadow:5px 5px 5px;
+}
+.card-header {
+    display: flex;
+}
+.card-header i {
+    margin-left: auto;
+    cursor: pointer;
+}
+/* .card .btn {
+    position: absolute;
+    bottom:5%;
+    left:5%;
+    background-color: #46ACC2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+} */
+.card .i-btn {
+    position: absolute;
+    bottom:5%;
+    left:5%;
+    background-color: #46ACC2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+/* .card .btn-del {
+    position: absolute;
+    bottom:5%;
+    left:30%;
+    background-color: #46ACC2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+} */
+.card .i-btn-del {
+    position: absolute;
+    bottom:5%;
+    left:20%;
+    background-color: #46ACC2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+/* Task Style */
+textarea {
+    min-width: 280px;
+    border: 1px solid rgb(216, 212, 212);
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border-radius: 3px;
+    color: rgb(47, 46, 48);
+    display: flex;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <!--[if lt IE 9]>
+            <script src="/js/html5shiv.js"></script>
+        <![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDoList Website</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
+        <script src="https://kit.fontawesome.com/392e21a9ac.js" crossorigin="anonymous"></script>
+        <script>
+            function allowDrop(ev) {
+              ev.preventDefault();
+            }
+            
+            function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+            
+            function drop(ev) {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="navbar-brand Navbar__Link Navbar__Link-brand">
+                <i class="fas fa-home"></i>
+            </div>
+            <div class="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-left">
+                <div class="Navbar__Link">
+                    <i class="fas fa-columns"></i>
+                </div>
+                <div class="Navbar__Link">
+                    <input class="search" type="search" placeholder=" Search ...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </nav>
+            <nav class="nav-right">
+                <div>
+                    <i class="fas fa-plus-square"></i>
+                </div>
+                <div class="Navbar__Link">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="card" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="card-header">
+                    <h4><b>To Do</b></h4>
+                    <i class="fas fa-ellipsis-h test"></i>
+                </div>
+                <textarea draggable="true" ondragstart="drag(event)" id="drag1">
+                 
+                </textarea>
+                <i class="fas fa-plus-square i-btn"></i>
+                <i class="fas fa-trash-alt i-btn-del"></i>
+            </div>
+            <div class="card" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="card-header">
+                    <h4><b>Doing</b></h4>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <textarea draggable="true" ondragstart="drag(event)" id="drag2">
+                  
+                </textarea>
+                <i class="fas fa-plus-square i-btn"></i>
+                <i class="fas fa-trash-alt i-btn-del"></i>
+            </div>
+            <div class="card" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="card-header">
+                    <h4><b>Done</b></h4>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <textarea draggable="true" ondragstart="drag(event)" id="drag3">
+                   
+                </textarea>
+                <i class="fas fa-plus-square i-btn"></i>
+                <i class="fas fa-trash-alt i-btn-del"></i>
+            </div>
+        </section>
+        <script>
+            function classToggle() {
+                const navs = document.querySelectorAll('nav')
+                navs.forEach(nav => nav.classList.toggle('navbar-toggleShow'));
+            }
+            document.querySelector('.navbar-toggle').addEventListener('click', classToggle);
+        </script>
+    </body>
+</html>
